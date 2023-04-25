@@ -1,5 +1,9 @@
 const fetchRepoContent = async (name) => {
-    const response = await fetch(`https://api.github.com/repos/MajidRaimi/${name}/contents`)
+    const response = await fetch(`https://api.github.com/repos/MajidRaimi/${name}/contents`, {
+        next: {
+            revalidate: 60
+        }
+    })
     return await response.json()
 }
 
