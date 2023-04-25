@@ -29,4 +29,8 @@ export const POST = async (request) => {
         link,
     }
 
+    courses.push(newCourse);
+
+    return NextResponse.json(newCourse);
+
 };
