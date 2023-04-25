@@ -16,5 +16,17 @@ export const GET = async (request) => {
     });
 
     return NextResponse.json(filteredCourses);
-
 }
+
+export const POST = async (request) => {
+    const { title, description, level, link } = await request.json();
+
+    const newCourse = {
+        id: courses.length + 1,
+        title,
+        description,
+        level,
+        link,
+    }
+
+};
